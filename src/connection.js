@@ -1917,6 +1917,9 @@ Connection.prototype.STATE = {
       connectTimeout: function() {
         this.transitionTo(this.STATE.FINAL);
       },
+      routingChange: function routingChange() {
+        this.transitionTo(this.STATE.REROUTING);
+      },
       data: function(data) {
         this.sendDataToTokenStreamParser(data);
       },
